@@ -3,10 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Booleans</title>
+  <title>Booleans & If-Statement</title>
 </head>
 <body>
   <script>
+    console.log(2<4); // Will give boolean value 'true'.
+    console.log(2>4); // Will give boolean value'false'.
+
+    console.log(typeof 'true'); // string
+    console.log(typeof true); // boolean
+
+    console.log(5 == '5') // true as == will convert into same type.
+    console.log(5 === '5') // false ecause of strict equality checkup and no conversion.
+
+    if(true){
+      console.log("Hello!");
+    }
+    else{
+      console.log("Bye!");
+    } //Hello!
+
+    //Write some code to check if someone is old enough to drive.
+    if(30 >= 18){
+      console.log("You can drive!");
+      console.log("You are above 18 years.");
+    }
+    else
+      console.log("You can not drive!");
+
+    
   </script>
 </body>
 </html> 
