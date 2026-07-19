@@ -10,68 +10,59 @@
 <body>
   <p>Rock Paper Scissor</p>
 
-  <button onclick="
-  //Computer Move:
-  const computerMove = pickComputerMove();
+  <button onclick="playGame('Rock');">Rock</button>
 
-  // To compare the computerMove and the user's move
-  let result = ''; 
-  if(computerMove === 'Rock'){
-    result = 'Tie';
-  }
-  else if(computerMove === 'Paper'){
-    result = 'You lose';
-  }
-  else if(computerMove === 'Scissor'){
-    result = 'You win';
-  }
-  console.log(result);
-  alert(`You picked Rock. Computer picked ${computerMove}. ${result}`);
-  ">
-    Rock</button>
+  <button onclick="playGame('Paper');">Paper</button>
 
-  <button onclick="
-   //Computer Move:
-  const computerMove = pickComputerMove();
-
-  // To compare the computerMove and the user's move
-  let result = ''; 
-  if(computerMove === 'Rock'){
-    result = 'You win';
-  }
-  else if(computerMove === 'Paper'){
-    result = 'Tie';
-  }
-  else if(computerMove === 'Scissor'){
-    result = 'You lose';
-  }
-  console.log(result);
-  alert(`You picked Paper. Computer picked ${computerMove}. ${result}`);
-  ">
-    Paper</button>
-
-  <button onclick="
-   
-   //Computer Move:
-  const computerMove = pickComputerMove();
-  
-  // To compare the computerMove and the user's move
-  let result = ''; 
-  if(computerMove === 'Rock'){
-    result = 'You lose';
-  }
-  else if(computerMove === 'Paper'){
-    result = 'You win';
-  }
-  else if(computerMove === 'Scissor'){
-    result = 'Tie';
-  }
-  console.log(result);
-  alert(`You picked Scissor. Computer picked ${computerMove}. ${result}`);
-  ">
-    Scissor</button>
-
+  <button onclick="playGame('Scissor');">Scissor</button>
   <script> //The reason to created the function in script element is that remember the script element runs when the page is loaded so we wanna make sure that the function is created first and then we use it in the button after. And as we have created the function in script element, we just have to call the function in the button instead of repeating the whole code.
+
+    function playGame(playMove) {
+      //Computer Move:
+      const computerMove = pickComputerMove();
+
+      let result = '';
+
+      // To compare the computerMove and the user's move
+      if (playMove === 'Rock') {
+        if (computerMove === 'Rock') {
+          result = 'Tie';
+        }
+        else if (computerMove === 'Paper') {
+          result = 'You lose';
+        }
+        else if (computerMove === 'Scissor') {
+          result = 'You win';
+        }
+      }
+    else if(playMove === 'Paper'){
+        if (computerMove === 'Rock') {
+          result = 'You win';
+        }
+        else if (computerMove === 'Paper') {
+          result = 'Tie';
+        }
+        else if (computerMove === 'Scissor') {
+          result = 'You lose';
+        }
+      }
+      else if(playMove === 'Scissor'){
+        if (computerMove === 'Rock') {
+          result = 'You lose';
+        }
+        else if (computerMove === 'Paper') {
+          result = 'You win';
+        }
+        else if (computerMove === 'Scissor') {
+          result = 'Tie';
+        }
+      }
+
+      console.log(result);
+
+    alert(`You picked ${playMove}. Computer picked ${computerMove}. ${result}`);
+
+    }
 
     // let computerMove = ''; // Global variable
 
