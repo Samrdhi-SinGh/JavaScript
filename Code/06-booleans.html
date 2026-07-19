@@ -1,37 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Booleans & If-Statement</title>
 </head>
+
 <body>
   <script>
-    console.log(2<4); // Will give boolean value 'true'.
-    console.log(2>4); // Will give boolean value'false'.
 
-    console.log(typeof 'true'); // string
-    console.log(typeof true); // boolean
+    /*
+        console.log(2 < 4); // Will give boolean value 'true'.
+        console.log(2 > 4); // Will give boolean value'false'.
+    
+        console.log(typeof 'true'); // string
+        console.log(typeof true); // boolean
+    
+        console.log(5 == '5') // true as == will convert into same type.
+        console.log(5 === '5') // false ecause of strict equality checkup and no conversion.
+    
+        if (true) {
+          console.log("Hello!");
+        }
+        else {
+          console.log("Bye!");
+        } //Hello!
+    
+        //Write some code to check if someone is old enough to drive.
+        if (30 >= 18) {
+          console.log("You can drive!");
+          console.log("You are above 18 years.");
+        }
+        else
+          console.log("You can not drive!");
+    */
+    /*
+     //Using Logical operators:
+     // Add operator (&&):
+     console.log(true && false);//false
+     console.log(5 < 9 && 7 < 8);//true
+ 
+     //Or operator (||):
+     console.log(true || false);//true
+     console.log(4 || 0);// 4 beacuse it's true.
+ 
+     //Not operator (!):
+     console.log(!true);//false
+     console.log(!false);//true
+     console.log(!4);//false
+     console.log(!0);//true
+    */
 
-    console.log(5 == '5') // true as == will convert into same type.
-    console.log(5 === '5') // false ecause of strict equality checkup and no conversion.
-
-    if(true){
-      console.log("Hello!");
+    const cartQuantity = 5; // Here, we are using truthy and falsy instead of comparing. 
+    // Like if(cartQunantity >=0 ){....} So if true it'll print statement , if not then nothing. It'll depend on the value instead.
+    if (cartQuantity) {
+      console.log('cart has products');// true becuase cartQuantity is 5. 
     }
-    else{
-      console.log("Bye!");
-    } //Hello!
 
-    //Write some code to check if someone is old enough to drive.
-    if(30 >= 18){
-      console.log("You can drive!");
-      console.log("You are above 18 years.");
-    }
-    else
-      console.log("You can not drive!");
+    //Ternary Operator:
+    const age = 12 ? 'truthy' : 'falsy';
+    console.log(age);
+
+    //Guard Operator:
+    conxole.log(false && 5);//It'll not check the next and diretly display false ignoring even checking secong value.
 
     
   </script>
 </body>
-</html> 
+
+</html>
