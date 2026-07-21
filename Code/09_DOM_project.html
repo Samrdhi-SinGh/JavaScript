@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Project</title>
+</head>
+
+<body>
+  <!--Steps:-
+
+  When we click the button,
+  1. If the text is "Subscribe" => Subscribed
+  2. Otherwise, change it back => "Subscribe"
+  
+  -->
+  <p>You Tube Subscribe Button</p>
+  <button onclick="buttonElement();" class="js-button-subscribe">
+    Subscribe
+  </button>
+
+  <script>
+
+    function buttonElement() {
+      const buttonElement = document.querySelector('.js-button-subscribe');
+      console.log(buttonElement.innerHTML);
+
+      if (buttonElement.innerText=== 'Subscribe') {
+        buttonElement.innerHTML = 'Subscribed';
+      } else {
+        buttonElement.innerHTML = 'Subscribe';
+      }
+    };
+
+  </script>
+</body>
+</html>

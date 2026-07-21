@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <button>hello</button>
+  <button class="js-button">Second</button><!--class attribute adda a label-->
+  <script>
+    console.log(document.title);//DOM
+  // document.body.innerHTML = 'hello';//This removes everything from page and displays only 'hello'.  
+  document.title='Hello';
+
+  console.log(document.body);//It gives the whole body in the console.
+  console.log(typeof document.body);//object
+
+  console.log(document.body.innerHTML);
+  // <button>hello</button>
+
+  // <script>
+  //   console.log(document.title);//DOM
+  // // document.body.innerHTML = 'hello';//This removes everything from page and displays only 'hello'.  
+  // document.title='Hello';
+
+  // console.log(document.body);//It gives the whole body in the console.
+  // console.log(typeof document.body);//object
+
+  // console.log(document.body.innerHTML);
+
+  //Giving HTML to innerHTML
+// console.log(document.body.innerHTML = '<button>Change</button>');//<button>Change</button>
+
+//document.querySelector():
+console.log(document.querySelector('button'));//<button>Change</button>
+console.log(document.querySelector('button').innerHTML);//hello
+// console.log(document.querySelector('button').innerHTML = 'Changed');//Changed
+
+const buttonElement = document.querySelector('.js-button');
+console.log(buttonElement);//<button class="js-button">Second</button>
+  </script>
+  </script>
+</body>
+
+</html>
