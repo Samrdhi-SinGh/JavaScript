@@ -35,3 +35,47 @@ document.querySelector(): It let us get any element and put it inside the JavaSc
 - document.innerText is used for text to be count only even if there is space inbetween or beside them.
 
 - <p> is a block element that takes an entire line by itself.
+
+- <input> is a self-closing element.
+
+- Doing element.value gives the value.
+
+- Number(), String() are built-in functions that convert other types into themselves.
+
+- "onkeydown" is used to show that keys are being used.
+*onkeydown= "console.log('typing');* 
+- To show the key we use 'event'. 'event' is an object provided by JavaScript that contains the info about the event.
+
+clicks and keydownare known as 'events'.
+onclick, onkeydown are known as 'event listeners'.
+
+- event Listeners: *Every eventy listener gets an event object.*
+onclick = click
+onkeydown = key press
+onscroll = scrolling
+onmouseenter = hover over
+onmouseleave = stop hovering over
+...many more
+
+- String(): 
+If a string only contains a number, and we do '-*/' => It will be converted into a number.
+Like;
+String(25);//Now 25 as an string can be used to '-*/' with a number.
+console.log('25'-5)//20
+console.log('25'*5)//125
+console.log('25'/5)//5
+*This all are 'Type Coercion'.*
+- But it's better not to do maths using strings until necessary.
+console.log('25'+ 5)//'255' (Concatenation)
+
+**window object:-**
+*window object is the whole window, it connects everythind in code to window.*
+window.console.log('window');
+window.document.body.innerHTML('hello')
+window.alert('Hi!');
+
+*Everything in JavaScript is written with window.*
+- We don't have to "window." JavaScript will automatically add it.
+
+<u>**Conclusion of Lesson 9:-**</u>
+![Conclusion of Lesson 9](../Images/Lesson9.jpeg)

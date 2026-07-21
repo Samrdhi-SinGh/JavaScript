@@ -20,19 +20,76 @@
     Subscribe
   </button>
 
+
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under $40=+$10 shipping.</p>
+  <p>Orders over $40 = FREE shipping.</p>
+
+  <input placeholder="Cost of order" class="js-calculate" onkeydown="
+  handleCostKey(event);" onkeyup="handleCostKey(event);">
+  <button onclick="
+  calculateCost();
+  " class="js-calculated">Calculate</button>
+  <p class="js-calculated-cost"></p>
+
   <script>
+
+    function handleCostKey(event) {
+      console.log(event);//Tell us what key is being pressed like;
+      //KeyboardEvent{isTrusted: true, key: '7', code: 'Digit7', location: 0, ctrlKey: falsez}
+      if (event.key === 'Enter') { // 'event.key' tells what key is being used.
+        calculateCost();
+      }
+    }
 
     function buttonElement() {
       const buttonElement = document.querySelector('.js-button-subscribe');
       console.log(buttonElement.innerHTML);
 
-      if (buttonElement.innerText=== 'Subscribe') {
+      if (buttonElement.innerText === 'Subscribe') {
+
         buttonElement.innerHTML = 'Subscribed';
-      } else {
+      }
+      else {
         buttonElement.innerHTML = 'Subscribe';
+      }
+    };
+
+    function calculateCost() {
+
+      const inputElement = document.querySelector('.js-calculate');
+      let cost = Number(inputElement.value);
+
+      if(inputElement.value === ''){
+        buttonCalculated(false);
+        document.querySelector('.js-calculated-cost').innerHTMl = '';
+        return; //It doesn't let the empty box be calculated
+      }
+
+      if (cost < 40) {
+        cost = cost + 10;
+      }
+
+      document.querySelector('.js-calculated-cost')
+        .innerHTML = `$${cost}`;
+
+        buttonCalculated(true);//Now if there will be cost, button will be clicked and show calculated else not.
+
+    }
+
+    function buttonCalculated(isCalculated) {
+      const buttonCalculated = document.querySelector('.js-calculated');
+      console.log(buttonCalculated.innerHTML);
+
+      if (isCalculated === true) {
+        buttonCalculated.innerHTML = 'Calculated';
+      }
+      else {
+        buttonCalculated.innerHTML = 'Calculate';
       }
     };
 
   </script>
 </body>
+
 </html>
