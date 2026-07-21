@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Project</title>
+</head>
+
+<style>
+  .js-button-subscribe{
+    background-color: black;
+    color:white;
+    font-family: Arial;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px; 
+    border: none;
+    border-radius: 50px;
+    cursor:pointer;
+    margin-bottom: 35px;
+  }
+
+  /*
+  One solution for the style when button is 'Subscribed':
+  When we click the button,
+  1. Add a class
+  2. This classes will have different styles.
+  */
+
+  .is-subscribed{
+    background-color: rgb(240, 240, 240);
+    color: black;
+  }
+
+  .js-calculate{
+    padding: 10px;
+    font-size: 15px;
+  }
+  .js-calculated{
+    border: none;
+    background-color: green;
+    color:white;
+    font-size:15px;
+    padding: 12px 15px;
+    font-family: Arial;
+    cursor: pointer;
+    border: none;
+  }
+
+  .is-calculated{
+    background-color: rgb(10, 187, 10);
+  }
+
+</style>
+
+<body>
+  <!--Steps:-
+
+  When we click the button,
+  1. If the text is "Subscribe" => Subscribed
+  2. Otherwise, change it back => "Subscribe"
+  
+  -->
+  <p>You Tube Subscribe Button</p>
+  <button onclick="buttonElement();" class="js-button-subscribe">
+    Subscribe
+  </button>
+
+
+  <p>Amazon Shipping Calculator</p>
+  <p>Orders under $40=+$10 shipping.</p>
+  <p>Orders over $40 = FREE shipping.</p>
+
+  <input placeholder="Cost of order" class="js-calculate" onkeydown="
+  handleCostKey(event);" onkeyup="handleCostKey(event);">
+  <button onclick="
+  calculateCost();
+  " class="js-calculated">Calculate</button>
+  <p class="js-calculated-cost"></p>
+
+  <script>
+
+    function handleCostKey(event) {
+      console.log(event);//Tell us what key is being pressed like;
+      //KeyboardEvent{isTrusted: true, key: '7', code: 'Digit7', location: 0, ctrlKey: falsez}
+      if (event.key === 'Enter') { // 'event.key' tells what key is being used.
+        calculateCost();
+      }
+    }
+
+    function buttonElement() {
+      const buttonElement = document.querySelector('.js-button-subscribe');
+      console.log(buttonElement.innerHTML);
+
+      if (buttonElement.innerText === 'Subscribe') {
+
+        buttonElement.innerHTML = 'Subscribed';
+        buttonElement.classList.add('is-subscribed');//add() adds a class to an element.
+      }
+      else {
+        buttonElement.innerHTML = 'Subscribe';
+        buttonElement.classList.remove('is-subscribed');//Removes the class added.
+      }
+    };
+
+    function calculateCost() {
+
+      const inputElement = document.querySelector('.js-calculate');
+      let cost = Number(inputElement.value);
+
+      if(inputElement.value === ''){
+        buttonCalculated(false);
+        document.querySelector('.js-calculated-cost').innerHTMl = '';
+        return; //It doesn't let the empty box be calculated
+      }
+
+      if (cost < 40) {
+        cost = cost + 10;
+      }
+
+      document.querySelector('.js-calculated-cost')
+        .innerHTML = `$${cost}`;
+
+        buttonCalculated(true);//Now if there will be cost, button will be clicked and show calculated else not.
+
+    }
+
+    function buttonCalculated(isCalculated) {
+      const buttonCalculated = document.querySelector('.js-calculated');
+      console.log(buttonCalculated.innerHTML);
+
+      if (isCalculated === true) {
+        buttonCalculated.innerHTML = 'Calculated';
+        buttonCalculated.classList.add('is-calculated');
+      }
+      else {
+        buttonCalculated.innerHTML = 'Calculate';
+        buttonCalculated.classList.remove('is-calculated');
+      }
+    };
+
+  </script>
+</body>
+
+</html>
