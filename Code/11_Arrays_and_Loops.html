@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays & Loops</title>
+</head>
+
+<body>
+  <script>
+    /*
+    const myArray = [1, 3, 4];
+    console.log(myArray);
+
+    console.log(myArray[1]);//3
+    myArray[0] = 99;
+    console.log(myArray);//[99, 3, 4]
+
+    [1,2,'hello', {name : 'socks'}, [1,2]]
+
+    const myarray = [1, 4, 'Hey', [1,3]];
+    console.log(myarray);
+    console.log(typeof [1, 2]);// object , Array is an object
+
+    //Array.isArray():-
+    console.log(Array.isArray(myarray));//true, it checks if this is array
+    console.log(Array.isArray([1,2]));//true, it checks if this is array
+
+    //.length():-
+    console.log(myarray.length);//4, .length tells us the number of elements. And [1,2] is counted as one element.
+    console.log('hello'.length);//5
+
+    //.push():- This pushes the element at last index in an array.
+    myarray.push(100);
+    console.log(myarray);//[1, 4, 'Hey', [1,3], 100]
+
+    //.splice():
+    myarray.splice(0, 2);
+    console.log(myarray);// It'll remove two values from the given index that is 0 here.
+    */
+
+    /*
+    let i = 1;
+
+    while (i <= 3) {
+      console.log(i);
+      i++;
+    }//1, 2, 3
+
+    for (let i = 1; i <= 5; i++) {
+      console.log(i);
+    }//1, 2, 3, 4, 5
+
+    //Non-Standard loop: Generate random numbers until one that's at least 0.5
+    let randomNumber = 0;
+while(randomNumber < 0.5){
+    randomNumber = Math.random();
+}
+console.log(randomNumber);//0.53....
+*/
+
+    // Accumulater Pattern:-
+    const nums = [1, 1, 3];//To add all elements inside the array:-
+    let total = 0; //Accumulator variable
+
+    for (let i = 0; i < nums.length; i++) {
+      total = total + nums[i];
+    }
+      console.log(total);
+
+    //To double all the elements of an array:-
+    const theArray = [];
+    for(let i = 0; i < nums.length; i++){
+      const num = nums[i];
+      theArray.push(num*2);
+    }
+    console.log(theArray);//(3) [2, 2, 6]
+
+  </script>
+</body>
+
+</html>
