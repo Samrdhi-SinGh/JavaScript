@@ -1,7 +1,8 @@
 <u>**What is an Object?**</u>  
 
-*An Object groups multiple values together and let us use multiple values together.*
+*An Object groups multiple values together and lets us use multiple values together.*
 *An object is another type of value.*
+
 Format:
 const ObjectName = {
       Property1: Value1,
@@ -50,7 +51,7 @@ when we click a button between Rock, Paper, Scissor,
 1. Computer makes it's move randomly and choose one of the three.
 2. Then computer's and user's move is compared.
 3. Update a score.
-4. Now, create a popup to show the result of who win or lose or it was a tie.
+4. Now, create a popup to show the result of who win or lose or was it a tie.
 
 <u>**More details about objects:-**</u>
 
@@ -75,9 +76,9 @@ Example:
 
 - Between the bracket notation we can use a variable, calculation, string.
 
-- We use 'Dot notation' bydefault always. And use break notation when we need to use some properties that doesnt work in dot notation.
+- We use 'Dot notation' bydefault always. And use break notation when we need to use some properties that doesn't work in dot notation.
 
-- Inside an object, we can save any type of value: Number, string,BOolean, Char, Float, etc.
+- Inside an object, we can save any type of value: Number, String, Boolean, Char, Float, etc.
 
 - We can use nested property for objects.
 - We can create function inside an object too. Because a function is actually another type of value only.
@@ -108,7 +109,7 @@ const product3 = {
 
 Method:  
 *Method is a function inside an object.*
-Example: console.log, Math.random() where random is function and math is object.
+Example: console.log, Math.random() where random is function and math is an object.
 
 **Built-in objects:-**
 *Built-in objects are the objects already built.*
@@ -118,7 +119,7 @@ Example: console.log, Math.random() where random is function and math is object.
 *It helps us work with 'JSON'.*
 It'a a syntax similar to JavaScript object but has less features.
 
-- JSON doesn't support 'Single-quotes' and 'functions'. JSON always uses double-quotw to assign values and variables, objects.
+- JSON doesn't support 'Single-quotes' and 'functions'. JSON always uses double-quote to assign values, variables, and objects.
 
 Why JSON over JavaScript object?
 A 'JavaScript object' can only be understood by JavaScript while JSON can almost be understand by all languages(It's more universal).
@@ -142,10 +143,10 @@ Example:
      const jsonString = JSON.stringify(product3);
      console.log(JSON.parse(jsonString));
 
-2. **localStorage built-in objrcts:-**
-*It savesvalues more permanently.*
+2. **localStorage built-in objects:-**
+*It saves values more permanently.*
 Variables are temporary. If we refresh the page or close the page, all the variables are deleted.
-*Using localStorage, the variable contains the value even though we refresh the page. It only supports string.*
+*Using localStorage, the variable contains the value even when we refresh the page. It only supports string.*
 
 localStorage.steItem(): To save the value inside the storage.
 localStorage.getItem(): To get the value from the storage.
@@ -170,15 +171,15 @@ score === null => false
 
 <u>**null vs undefined:-**</u>
 
-null: Intentionally wants something to be empty.null will not use default value.
-undefined: A variable or pararmeter having no value asserted. It can default value then.
+null: Intentionally wants something to be empty. 'null' will not use default value.
+undefined: A variable or pararmeter having no value asserted. It can use default value then.
 
 
 **Auto-boxing:-**
 
  //Auto-Boxing:
     // JavaScript has a special feature 'Auto-boxing, it first wraps the string into a special object and then use methods with it.'
-    // Not only objects, values can also have properties  & methods. We don't see the special object.
+    // Not only objects, values can also have properties & methods. We don't see the special object.
     // Auto - boxing doesn't work with 'null and undefined'.
     console.log('hello'.length);//5, length tells the number of characters of value.
     console.log('hello'.toUpperCase());//HELLO, toUpperCase converts small characters into upper ones.
@@ -186,7 +187,7 @@ undefined: A variable or pararmeter having no value asserted. It can default val
 
     //Auto-Boxing works with floats, boolean, etc but not take integers but can give them when takes float for them:
     console.log(3.0.toString());//3, string.
-    // console.log(null.property());//r: Cannot read properties of null (reading 'property')
+    // console.log(null.property());// Cannot read properties of null (reading 'property')
 
     //Object are references:
     const object1 = {
@@ -194,18 +195,18 @@ undefined: A variable or pararmeter having no value asserted. It can default val
     };
 
     //Copy by referance:
-    const object2 = object1;// here, object2 doesn't get the actual value of object1, it just gets the referance that points to the value in memory and this fast too.
+    const object2 = object1;// here, object2 doesn't get the actual value of object1, it just gets the reference that points to the value in memory and this is fast too.
 
-    //We can assert a different value into a const variable using object using referance because we are changing the value in variable directly, we are changing it at the location referance points to.
+    //We can assert a different value into a const variable using object using reference because we aren't changing the value in variable directly, we are changing it at the location referance points.
     object1.message = 'Good morning!';
     console.log(object1);//{message: 'Good morning!'} 
     console.log(object2);//{message: 'Good morning!'} 
 
-    //'We compare referances, not values in objects.''
+    //'We compare references, not values in objects.''
     const object3 = {
       message: 'Good morning'
     };
-    console.log(object3 === object1);//false, because it doesn't compare values, it compares referances.
+    console.log(object3 === object1);//false, because it doesn't compare values, it compares references.
     console.log(object2 === object1);//true
 
     //Shortcuts for objects:
@@ -216,7 +217,7 @@ undefined: A variable or pararmeter having no value asserted. It can default val
 
     //Detructuring:Easier way to take properties out of an obejct
     // const message = object4.message;
-    const { message, price } = object4;//Both lines do samething. Here the message of object4 will be taken and then stored in const message variable.
+    const { message, price } = object4;//Both lines do same thing. Here, the message of object4 will be taken and then stored in const message variable.
     console.log(message);//hello
     console.log(price);//1098
 
