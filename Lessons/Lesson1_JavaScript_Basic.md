@@ -20,7 +20,7 @@ Terminologies (Or Naming):-
 The instructions we give to computer are "Code". And, when the computer follws the instructions it's "Running the code".
 
 Programming language :-
-Programming language are used to communicate with computers. There are many languages like: Js, C++, Java, Python, Go.
+Programming language are used to communicate with computers. There are many languag es like: Js, C++, Java, Python, Go.
 
 JavaScript Can work on 'Console'. Maths can be worked in Javascript on 'Console' too.
 

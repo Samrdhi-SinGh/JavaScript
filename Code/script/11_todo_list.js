@@ -4,12 +4,12 @@ for(let i = 1; i < todoList.length; i++){
   const todo = todoList[i];
   const html = `
   <p>${todo}</p>`;
-  todoListHTML +=html;
+  todoList +=html;
 }
 console.log(todoListHTML);
 
 document.querySelector('.js-todo-list')
-.innerHTML = todoListHTML;
+.innerHTML = todoList;
 
 function addtodoList(){
   const inputElement = document.querySelector('.js-todo-name');
