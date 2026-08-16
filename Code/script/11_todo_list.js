@@ -1,24 +1,48 @@
-const todoList = ['make dinner', 'wash clothes'];//Global variable
+const todoList = [];
 
-for(let i = 1; i < todoList.length; i++){
-  const todo = todoList[i];
-  const html = `
-  <p>${todo}</p>`;
-  todoList +=html;
+
+function renderTodoList() {
+  let todoListHTML = '';
+
+  // for (let i = 0; i < todoList.length; i++) {
+  //   const todoObject = todoList[i];
+  //   let {name, duedate} = todoObject;
+  todoList.forEach((todoObject, index) => {
+    let {name, duedate} = todoObject;
+    const html = `<div>${name}</div>
+    <div>${duedate}</div>
+    <button onclick="
+    todoList.splice(${index}, 1);
+    renderTodoList();
+    " class="js-delete-button">Delete</button>
+    `
+    todoListHTML += html;
+  });
+
+  document.querySelector('.todo-lists').innerHTML = todoListHTML;
 }
-console.log(todoListHTML);
 
-document.querySelector('.js-todo-list')
-.innerHTML = todoList;
-
-function addtodoList(){
-  const inputElement = document.querySelector('.js-todo-name');
+function addButton() {
+  const inputElement = document.querySelector('.todo-inbox');
   let name = inputElement.value;
-  todo.push(name);
-  console.log(todoList); 
 
-  inputElement.value = '';//This will replace the value to empty after adding to todo array.
+  const dateInputElement = document.querySelector('.date-inbox');
+  let duedate = dateInputElement.value;
+
+  todoList.push({name, duedate});
+  console.log(todoList);
+
+  inputElement.value = '';
+  dateInputElement.value = '';
+
+  renderTodoList();
 }
 
+function handleKeydown(event) {
+  console.log(event);
 
- 
+  if (event.key === 'Enter') {
+    addButton();
+  }
+}
+

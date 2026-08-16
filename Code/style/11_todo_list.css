@@ -1,0 +1,42 @@
+body{
+  font-family: Arial;
+}
+
+.todo-grid,
+.todo-inbox-grid{
+  display: grid;
+  grid-template-columns: 200px 150px 120px;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.todo-inbox-grid{
+  margin-bottom: 10px;
+  /* align-items: stretch; */
+} 
+
+.todo-inbox,
+.date-inbox{
+  font-size: 15px;
+  padding: 6px;
+}
+
+.js-add-button{
+  border: none;
+  color: white;
+  background-color: green;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+.js-delete-button{
+  border: none;
+  color: white;
+  background-color: #8e0909;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
