@@ -8,19 +8,34 @@ function renderTodoList() {
   //   const todoObject = todoList[i];
   //   let {name, duedate} = todoObject;
   todoList.forEach((todoObject, index) => {
-    let {name, duedate} = todoObject;
+    let { name, duedate } = todoObject;
     const html = `<div>${name}</div>
     <div>${duedate}</div>
-    <button onclick="
-    todoList.splice(${index}, 1);
-    renderTodoList();
-    " class="js-delete-button">Delete</button>
+    <button
+    " class="js-delete-button js-delete-click-button">Delete</button>
     `
     todoListHTML += html;
   });
 
   document.querySelector('.todo-lists').innerHTML = todoListHTML;
-}
+
+  document.querySelectorAll('.js-delete-click-button')
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener('click', () => {
+        todoList.splice(index, 1);
+        renderTodoList();
+      })
+    });
+
+};
+
+
+
+
+document.querySelector('.js-add-click-button').addEventListener('click', () => {
+  addButton();
+});
+
 
 function addButton() {
   const inputElement = document.querySelector('.todo-inbox');
@@ -29,7 +44,7 @@ function addButton() {
   const dateInputElement = document.querySelector('.date-inbox');
   let duedate = dateInputElement.value;
 
-  todoList.push({name, duedate});
+  todoList.push({ name, duedate });
   console.log(todoList);
 
   inputElement.value = '';
@@ -38,11 +53,11 @@ function addButton() {
   renderTodoList();
 }
 
-function handleKeydown(event) {
-  console.log(event);
+// function handleKeydown(event) {
+//   console.log(event);
 
-  if (event.key === 'Enter') {
-    addButton();
-  }
-}
+//   if (event.key === 'Enter') {
+//     addButton();
+//   }
+// }
 
